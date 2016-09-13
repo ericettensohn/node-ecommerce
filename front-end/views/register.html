@@ -4,33 +4,45 @@
 			<h1>Registration</h1>
 		</div>
 
-		<div class="col-sm-12">
+		<div class="col-sm-10 col-sm-offset-2">
 			<form ng-submit="register()" id="regi-form">
-				<div class="form-group">
-					<label class="col-sm-4">Username</label>
-					<div class="col-sm-4">
-						<input type="text" ng-model="username" placeholder="enter username" minlength="4" maxlength="50" class="form-control">
+				
+				<div class="row">
+					<div class="form-group col-sm-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+						
+							<input type="text" ng-model="username" placeholder="enter username" minlength="4" maxlength="50" class="form-control">
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-sm-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" ng-model="password" placeholder="enter password" minlength="4" maxlength="50" class="form-control">
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-sm-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock"></span></span>
+
+							<input type="password" ng-model="password2" placeholder="confirm password" minlength="4" maxlength="50" class="form-control">
+						</div>
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="col-sm-4">Password</label>
-					<div class="col-sm-4">
-						<input type="password" ng-model="password" placeholder="enter password" minlength="4" maxlength="50" class="form-control">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="col-sm-4">Confirm Password</label>
-					<div class="col-sm-4">
-						<input type="password" ng-model="password2" placeholder="confirm password" minlength="4" maxlength="50" class="form-control">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="col-sm-4">Email</label>
-					<div class="col-sm-4">
-						<input type="email" ng-model="email" placeholder="enter email" minlength="4" maxlength="50" class="form-control">
+				
+				<div class="row">
+					<div class="form-group col-sm-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+							<input type="email" ng-model="email" placeholder="enter email" minlength="4" maxlength="50" class="form-control">
+						</div>
 					</div>
 				</div>
 

@@ -10,6 +10,9 @@
 @import "layout/layout";
 @import "layout/header";
 @import "layout/footer";
+@import "layout/regi-dropdown";
+@import "layout/login-dropdown";
+
 
 // VIEWS
 // -------------------------------
@@ -19,6 +22,7 @@
 @import "views/delivery";
 @import "views/payment";
 @import "views/account";
+@import "views/register";
 
 
 body {
