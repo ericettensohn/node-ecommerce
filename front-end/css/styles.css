@@ -128,7 +128,31 @@
   text-align: right;
 }
 
-/* line 28, ../compass/sass/styles.scss */
+/* line 3, ../compass/sass/views/_options.scss */
+.container .product-box {
+  transition: all .2s ease-in;
+}
+/* line 5, ../compass/sass/views/_options.scss */
+.container .product-box h3 {
+  font-size: 22px;
+}
+/* line 9, ../compass/sass/views/_options.scss */
+.container .product-box:hover {
+  background-color: #f5f5f5;
+  border-color: #000;
+}
+/* line 14, ../compass/sass/views/_options.scss */
+.container .selected {
+  background-color: #f5f5f5;
+  border-color: #000;
+}
+
+/* line 21, ../compass/sass/views/_options.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 29, ../compass/sass/styles.scss */
 body {
   padding-top: 70px;
 }

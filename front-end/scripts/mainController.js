@@ -1,6 +1,8 @@
 var ecommerceApp = angular.module('ecommerceApp', ['ngRoute', 'ngCookies']);
 ecommerceApp.controller('mainController', function($scope, $http, $location, $cookies){
 
+	$scope.selectedProduct;
+
 	var apiPath = "http://localhost:3000";
 
 	$scope.register = function(){
@@ -30,12 +32,15 @@ ecommerceApp.controller('mainController', function($scope, $http, $location, $co
 
 			if (response.data.failure == 'badUser'){
 				$scope.badUser = true;
+
 			}
 			else if (response.data.failure == 'badPass'){
 				$scope.badPass = true;
 			}
 			else if (response.data.success == 'goodPass'){
-				
+				$location.path('/options');
+				$scope.signedInAs = $scope.username;
+				$scope.loggedIn = true;
 			}
 
 		}, function errorCallback(response){
@@ -44,9 +49,8 @@ ecommerceApp.controller('mainController', function($scope, $http, $location, $co
 		});
 	}
 
+
 });
-
-
 
 ecommerceApp.config(function($routeProvider){
 	$routeProvider.when('/', {
@@ -59,6 +63,10 @@ ecommerceApp.config(function($routeProvider){
 	})
 	.when('/register', {
 		templateUrl: 'views/register.html',
+		controller: 'mainController'
+	})
+	.when('/options', {
+		templateUrl: 'views/options.html',
 		controller: 'mainController'
 	});
 });
