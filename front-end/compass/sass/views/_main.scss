@@ -1,0 +1,27 @@
+.main-container {
+	padding: 0px;
+	margin: 0px;
+	.splash {
+		height: 75vh;
+		width: 100vw;
+		// background-color: $green;
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#207f60+0,60e4ad+40,35d4a0+100 */
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00aa72+0,60e4ad+100 */
+		background: #00aa72; /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover,  #00aa72 0%, #60e4ad 100%); /* FF3.6-15 */
+		background: -webkit-radial-gradient(center, ellipse cover,  #00aa72 0%,#60e4ad 100%); /* Chrome10-25,Safari5.1-6 */
+		background: radial-gradient(ellipse at center,  #00aa72 0%,#60e4ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aa72', endColorstr='#60e4ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+		// background: url('../images/background_alt.jpg') no-repeat center center;
+		// background-size: cover;
+
+		h1, h3 {
+			color: white;
+		}
+	}
+
+
+}

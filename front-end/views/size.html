@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="col-sm-4">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'small'}">
+				<img src="images/chocolate.jpg">
+				<div class="caption text-center">
+					<h3>Small</h3>
+					<button ng-click="selected = 'small'" class="btn btn-primary">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'medium'}">
+				<img src="images/vanilla.jpg">
+				<div class="caption text-center">
+					<h3>Med</h3>
+					<button ng-click="selected = 'medium'" class="btn btn-primary">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'large'}">
+				<img src="images/strawberry.jpg">
+				<div class="caption text-center">
+					<h3>Big</h3>
+					<button ng-click="selected = 'large'" class="btn btn-primary">Select</button>
+				</div>
+			</div>
+		</div>
+	
+	</div> <!-- row -->
+
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-5">
+				<a href="/#/checkout"><button class="btn btn-primary" ng-click="saveSelected('size')">Next</button></a>
+			</div>
+		</div>
+
+</div> <!-- container -->

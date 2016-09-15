@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="col-sm-2">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'chocolate'}">
+				<img src="images/chocolate.jpg">
+				<div class="caption text-center">
+					<h5>Chocolate</h5>
+					<button ng-click="selected = 'chocolate'" class="btn btn-primary btn-sm">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'vanilla'}">
+				<img src="images/vanilla.jpg">
+				<div class="caption text-center">
+					<h5>Vanilla</h5>
+					<button ng-click="selected = 'chocolate'" class="btn btn-primary btn-sm">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'strawberry'}">
+				<img src="images/strawberry.jpg">
+				<div class="caption text-center">
+					<h5>Strawberry</h5>
+					<button ng-click="selected = 'strawberry'" class="btn btn-primary btn-sm">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'banana'}">
+				<img src="images/banana.jpg">
+				<div class="caption text-center">
+					<h5>Banana</h5>
+					<button ng-click="selected = 'banana'" class="btn btn-primary btn-sm">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'coffee'}">
+				<img src="images/coffee.jpg">
+				<div class="caption text-center">
+					<h5>Coffee</h5>
+					<button ng-click="selected = 'coffee'" class="btn btn-primary btn-sm">Select</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'fruitPunch'}">
+				<img src="images/fruit_punch.jpg">
+				<div class="caption text-center">
+					<h5>Fruit Punch</h5>
+					<button ng-click="selected = 'fruitPunch'" class="btn btn-primary btn-sm">Select</button>
+				</div>
+			</div>
+		</div>
+	
+	</div> <!-- row -->
+
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-5">
+				<a href="/#/size"><button class="btn btn-primary btn-sm" ng-click="saveSelected('flavor')">Next</button></a>
+			</div>
+		</div>
+
+</div> <!-- container -->

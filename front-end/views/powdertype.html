@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="col-sm-4">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'whey'}">
+				<img src="images/whey.jpg">
+				<div class="caption text-center">
+					<h3>Whey Concentrate</h3>
+					<ul class="features list-group text-left">
+					  <li class="list-group-item"><span class="glyphicon glyphicon-usd"> </span> Affordable</li>
+					  <li class="list-group-item"><span class="glyphicon glyphicon-time"> </span> Pre and Post Workout</li>
+					  <li class="list-group-item"><span class="glyphicon glyphicon-certificate"> </span> Good for Daytime</li>
+					</ul>
+					<button id="whey-selector" ng-click="selected = 'whey'" class="btn btn-primary">$9/mo</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'casein'}">
+				<img src="images/casein.jpg">
+				<div class="caption text-center">
+					<h3>Casein Protein</h3>
+					<ul class="features list-group text-left">
+					  <li class="list-group-item"><span class="glyphicon glyphicon-hourglass"> </span> Extended Digestion</li>
+					  <li class="list-group-item"><span class="glyphicon glyphicon-menu-up"> </span> High Glutamine</li>
+					  <li class="list-group-item"><span class="glyphicon glyphicon-adjust"> </span> Good for Nighttime</li>
+					</ul>
+					<button id="whey-selector" ng-click="selected = 'casein'" class="btn btn-primary">$14/mo</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="thumbnail product-box" ng-class="{'selected':selected === 'whey-isolates'}">
+				<img src="images/whey_isolate.jpg">
+				<div class="caption text-center">
+					<h3>Whey Isolates</h3>
+					<ul class="features list-group text-left">
+					  <li class="list-group-item"><span class="glyphicon glyphicon-forward"> </span> Fast Absorbing</li>
+					  <li class="list-group-item"><span class="glyphicon glyphicon-heart-empty"> </span> Low Carb</li>
+					  <li class="list-group-item"><span class="glyphicon glyphicon-time"> </span> Pre and Post Workout</li>
+					</ul>
+					<button id="whey-selector" ng-click="selected = 'whey-isolates'" class="btn btn-primary">$19/mo</button>
+				</div>
+			</div>
+		</div>
+		
+	</div> <!-- row -->
+
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-5">
+				<a href="/#/flavor"><button class="btn btn-primary" ng-click="saveSelected('powderType')">Next</button></a>
+			</div>
+		</div>
+
+</div> <!-- container -->

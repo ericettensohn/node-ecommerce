@@ -7,21 +7,18 @@
 
 // LAYOUT
 // -------------------------------
-@import "layout/layout";
-@import "layout/header";
-@import "layout/footer";
+// @import "layout/layout";
+// @import "layout/header";
+// @import "layout/footer";
+@import "layout/nav";
 @import "layout/regi-dropdown";
 @import "layout/login-dropdown";
 
 
 // VIEWS
 // -------------------------------
-@import "views/home";
+@import "views/main";
 @import "views/subscribe";
-@import "views/choices";
-@import "views/delivery";
-@import "views/payment";
-@import "views/account";
 @import "views/register";
 @import "views/options";
 
