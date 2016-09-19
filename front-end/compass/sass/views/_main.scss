@@ -1,26 +1,80 @@
 .main-container {
+	overflow: hidden;
 	padding: 0px;
 	margin: 0px;
+
+	h1, h2, h3, h4 {
+		font-family: 'Lato', sans-serif;
+	}
+
+	.gray-sub {
+		color: #666;
+		font-weight: 300;
+	}
+
+	.big-glyph {
+		font-size: 30px;
+	}
 	.splash {
-		height: 75vh;
+		height: 92vh;
 		width: 100vw;
 		// background-color: $green;
 
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#207f60+0,60e4ad+40,35d4a0+100 */
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00aa72+0,60e4ad+100 */
-		background: #00aa72; /* Old browsers */
-		background: -moz-radial-gradient(center, ellipse cover,  #00aa72 0%, #60e4ad 100%); /* FF3.6-15 */
-		background: -webkit-radial-gradient(center, ellipse cover,  #00aa72 0%,#60e4ad 100%); /* Chrome10-25,Safari5.1-6 */
-		background: radial-gradient(ellipse at center,  #00aa72 0%,#60e4ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aa72', endColorstr='#60e4ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		// background: #00aa72; /* Old browsers */
+		// background: -moz-radial-gradient(center, ellipse cover,  #00aa72 0%, #60e4ad 100%); /* FF3.6-15 */
+		// background: -webkit-radial-gradient(center, ellipse cover,  #00aa72 0%,#60e4ad 100%); /* Chrome10-25,Safari5.1-6 */
+		// background: radial-gradient(ellipse at center,  #00aa72 0%,#60e4ad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aa72', endColorstr='#60e4ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 
-		// background: url('../images/background_alt.jpg') no-repeat center center;
-		// background-size: cover;
+		background: url('../images/background_large.jpg') no-repeat center center;
+		background-size: cover;
+		border-bottom: 1px solid gray;
 
 		h1, h3 {
 			color: white;
 		}
+
+	}
+	.down-arrow {
+		text-align: center;
+		margin: 0 auto;
+		float: none;
+		width: 50px;
+		font-size: 30px;
+		margin-top: 15px;
+	}
+
+	.steps-header {
+		margin-top: 40px;
+		margin: auto;
+		max-width: 700px;
+		text-align: center;
+		// div {
+		// 	margin: auto;
+		// 	width: 700px;
+		// }
+
+	}
+
+	.steps {
+		text-align: center;
+		margin: 0 auto;
+		max-width: 1000px;
+		margin-top: 40px;
+		.pick-powder {
+			margin-top: 8px;
+		}
+		div {
+			margin-bottom: 35px;
+		}
+	}
+
+	.sign-up-footer-wrapper {
+		width: 100px;
+		margin: auto;
 	}
 
 

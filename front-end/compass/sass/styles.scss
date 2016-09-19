@@ -21,8 +21,37 @@
 @import "views/subscribe";
 @import "views/register";
 @import "views/options";
+@import "views/checkout";
 
 
-body {
-	padding-top: 70px;
+html {
+	min-height: 100%;
+	position: relative;
 }
+
+.margined-container {
+	margin-top: 80px;
+	margin-bottom: 40px;
+}
+
+#views {
+	margin-bottom: 100px
+}
+
+// .body {
+// 	margin-bottom: 60px;
+// }
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+}
+
+.next {
+	margin: auto;
+}
+
+

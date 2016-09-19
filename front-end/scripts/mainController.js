@@ -1,5 +1,5 @@
 var ecommerceApp = angular.module('ecommerceApp', ['ngRoute', 'ngCookies']);
-ecommerceApp.controller('mainController', function($scope, $http, $location, $cookies){
+ecommerceApp.controller('mainController', function($scope, $http, $location, $cookies, $timeout){
 	var apiPath = "http://localhost:3000";
 	$scope.selected;
 	$scope.cartArray = [];
@@ -9,8 +9,41 @@ ecommerceApp.controller('mainController', function($scope, $http, $location, $co
 	// $scope.signedInAs;
 	checkToken();
 
+	var testSecretKey = 'sk_test_4AAQUIJPsnrUPYJkWL5eHqJQ';
+	var testPublishableKey = 'pk_test_2B8DuadWMIvzdFgCQLm5v58S';
+	var liveSecretKey = 'sk_live_4dBWaL2t0MJMf7IQEkGgxCcE';
+	var livePublishableKey = 'pk_live_fCCA4B9upLlFwdjR4EZRwEHn';
 
+	if($location.path() == '/checkout') {
+		$scope.type = $cookies.get('cartpowderType');
+		$scope.flavor = $cookies.get('cartflavor');
+		$scope.size = $cookies.get('cartsize');
 
+		if($cookies.get('firstName')){
+			console.log('test')
+			$scope.formFirstName = $cookies.get('firstName');
+			$scope.formLastName = $cookies.get('lastName');
+			$scope.formAddressA = $cookies.get('addressA');
+			$scope.formAddressB = $cookies.get('addressB');
+			$scope.formCity = $cookies.get('city');
+			$scope.formState = $cookies.get('state');
+			$scope.formZip = $cookies.get('zip');
+			console.log($scope.formZip)
+		}
+		else {
+			$('#modal').modal()
+		}
+	}
+
+	$scope.submitShipping = function(){
+		$cookies.put('firstName', $scope.formFirstName);
+		$cookies.put('lastName', $scope.formLastName);
+		$cookies.put('addressA', $scope.formAddressA);
+		$cookies.put('addressB', $scope.formAddressB);
+		$cookies.put('city', $scope.formCity);
+		$cookies.put('state', $scope.formState);
+		$cookies.put('zip', $scope.formZip);
+	}
 
 	$scope.register = function(){
 		$http.post(apiPath + '/addAccount', {
@@ -72,21 +105,62 @@ ecommerceApp.controller('mainController', function($scope, $http, $location, $co
 		});
 	}
 
+	  $scope.payOrder = function(userOptions) {
+
+    };
+
+
 	$scope.checkout = function(){
-		$http.post(apiPath + '/checkout', {
-			username: $scope.username,
-			powderType: $cookies.get('cartpowderType'),
-			flavor: $cookies.get('cartflavor'),
-			size: $cookies.get('cartsize')
-		}).then(function successCallback(response){
-			$cookies.remove('cartpowderType');
-			$cookies.remove('cartflavor');
-			$cookies.remove('cartsize');
-			cartArray = [];
-		}, function errorCallback(response){
+        $scope.errorMessage = "";
+        var handler = StripeCheckout.configure({
+            key: 'pk_test_2B8DuadWMIvzdFgCQLm5v58S',
+            image: 'images/logo.png',
+            locale: 'auto',
+            token: function(token) {
+                console.log("The token Id is: ");
+                console.log(token.id);
+
+                $http.post(apiUrl + '/stripe', {
+                    amount: $scope.total * 100,
+                    stripeToken: token.id,
+                    token: $cookies.get('token')
+                        //This will pass amount, stripeToken, and token to /payment
+                }).then(function successCallback(response) {
+                    console.log(response.data);
+                    if (response.data.success) {
+                        // Say thank you
+                        $location.path('/receipt');
+
+                        // clear those cooks
+						$http.post(apiPath + '/checkout', {
+							username: $scope.username,
+							powderType: $cookies.get('cartpowderType'),
+							flavor: $cookies.get('cartflavor'),
+							size: $cookies.get('cartsize')
+						}).then(function successCallback(response){
+							$cookies.remove('cartpowderType');
+							$cookies.remove('cartflavor');
+							$cookies.remove('cartsize');
+							cartArray = [];
+						}, function errorCallback(response){
 
 
-		});
+						});
+
+                    } else {
+                        $scope.errorMessage = response.data.failure;
+                        //same on the checkout page
+                    }
+                }, function errorCallback(response) {});
+            }
+        });
+        handler.open({
+            name: 'Protein Source',
+            description: 'Become a Living God',
+            amount: $scope.total * 100
+        });	
+
+
 	}
 
 	$scope.loadCart = function(){
@@ -105,6 +179,20 @@ ecommerceApp.controller('mainController', function($scope, $http, $location, $co
 		}
 		console.log($scope.cartArray);
 
+	}
+
+	$scope.triggerSignUp = function() {
+		console.log(angular.element('#sign-up-btn'))
+	    $timeout(function() {
+	        angular.element('#sign-up-btn').trigger('click');
+	    }, 100);
+	};
+
+
+	$scope.logout = function(){
+		$cookies.remove('token');
+		$scope.signedInAs = null;
+		$scope.loggedIn = false;
 	}
 
 	function checkToken() {
@@ -129,6 +217,9 @@ ecommerceApp.controller('mainController', function($scope, $http, $location, $co
 			})
 		}
 	}
+
+
+
 
 });
 

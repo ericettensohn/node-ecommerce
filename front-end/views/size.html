@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container margined-container">
 	<div class="row">
 		
 		<div class="col-sm-4">
 			<div class="thumbnail product-box" ng-class="{'selected':selected === 'small'}">
-				<img src="images/chocolate.jpg">
+				<img src="images/vectors/small.png">
 				<div class="caption text-center">
 					<h3>Small</h3>
 					<button ng-click="selected = 'small'" class="btn btn-primary">Select</button>
@@ -13,7 +13,7 @@
 
 		<div class="col-sm-4">
 			<div class="thumbnail product-box" ng-class="{'selected':selected === 'medium'}">
-				<img src="images/vanilla.jpg">
+				<img src="images/vectors/med.png">
 				<div class="caption text-center">
 					<h3>Med</h3>
 					<button ng-click="selected = 'medium'" class="btn btn-primary">Select</button>
@@ -23,7 +23,7 @@
 
 		<div class="col-sm-4">
 			<div class="thumbnail product-box" ng-class="{'selected':selected === 'large'}">
-				<img src="images/strawberry.jpg">
+				<img src="images/vectors/large.png">
 				<div class="caption text-center">
 					<h3>Big</h3>
 					<button ng-click="selected = 'large'" class="btn btn-primary">Select</button>
@@ -34,8 +34,8 @@
 	</div> <!-- row -->
 
 		<div class="row">
-			<div class="col-sm-2 col-sm-offset-5">
-				<a href="/#/checkout"><button class="btn btn-primary" ng-click="saveSelected('size')">Next</button></a>
+			<div class="text-center">
+				<a href="/#/checkout"><button class="btn btn-primary next" ng-click="saveSelected('size')">Checkout</button></a>
 			</div>
 		</div>
 

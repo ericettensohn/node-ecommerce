@@ -3,9 +3,16 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var mongoUrl = "mongodb://localhost:27017/ecommerce";
 var Account = require('../models/account');
-mongoose.connect(mongoUrl);
 var bcrypt = require('bcrypt-nodejs');
 var randToken = require('rand-token').uid;
+
+
+var config = require('../config/config')
+var stripe = require('stripe')(
+	'config.secretTestKey'
+);
+
+mongoose.connect(mongoUrl);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -115,6 +122,29 @@ router.post('/checkout', function(req, res, next){
 		size: req.body.size,
 	}).exec()
 
+	
+})
+
+
+router.post('/stripe', function(req, res, next){
+	stripe.charges.create({
+		amount: req.body.amount,
+		currency: 'usd',
+		source: req.body.stripeToken,
+		description: 'charge for ' + req.body.email,
+	}).then(function(charge){
+		res.json({
+			success: "paid"
+		});
+	}, function(err){
+		res.json({
+			failure: "failedPayment"
+		});
+	});
+
+})
+
+router.post('/logout', function(req, res, next){
 	
 })
 
