@@ -1,6 +1,7 @@
 var ecommerceApp = angular.module('ecommerceApp', ['ngRoute', 'ngCookies']);
 ecommerceApp.controller('mainController', function($scope, $http, $location, $cookies, $timeout){
-	var apiPath = "http://52.42.192.215:3000";
+	// var apiPath = "http://52.42.192.215:3000";
+	var apiPath = "http://ericettensohn.com/ecommerce/";
 	$scope.selected;
 	$scope.cartArray = [];
 	console.log($scope.cartArray);
